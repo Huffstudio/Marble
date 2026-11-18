@@ -193,6 +193,19 @@
     setTimeout(function () { apply(); requestAnimationFrame(function () { heroCv.classList.remove("swap"); }); }, 650);
   }
 
+  /* ---------- ateliê: Nero Marquina vivo ---------- */
+  var studio = $("#estudio"), studioCv = $("#studioGL");
+  var studioLive = Marble.live(studioCv, { maxDpr: 1, speed: 1.3, drift: true, still: RM });
+  if (studioLive) {
+    studioLive.set(byId["nero-marquina"]);
+    $(".studio-tex").classList.add("gl");
+    studio.addEventListener("pointermove", function (e) {
+      if (e.pointerType !== "mouse") return;
+      var r = studioCv.getBoundingClientRect();
+      studioLive.light((e.clientX - r.left) / r.width, 1 - (e.clientY - r.top) / r.height);
+    });
+  } else studioCv.style.display = "none";
+
   /* ---------- ficha técnica ---------- */
   var modal = $("#modal"), mdLive = null, mdIdx = 0, lastFocus = null;
   function fillModal(i) {
@@ -307,6 +320,7 @@
     });
   }, { threshold: .18, rootMargin: "0px 0px -6% 0px" });
   $$(".rv,.fade").forEach(function (el) { io.observe(el); });
+  io.observe(studio);
   $$(".card", grid).forEach(function (c, i) { c.style.transitionDelay = ((i % 4) * .07) + "s"; });
 
   /* ---------- rolagem ---------- */

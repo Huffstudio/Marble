@@ -174,7 +174,8 @@
     var ctx = makeGL(canvas, false);
     if (!ctx) return null;
     var st = { stone: null, gloss: 1, finish: 0, lx: .32, ly: .7, tx: .32, ty: .7, zoom: opts.zoom || 1, panX: 0, panY: 0,
-               visible: true, raf: 0, t0: performance.now(), scale: opts.scale || 1, still: !!opts.still };
+               visible: true, raf: 0, t0: performance.now(), scale: opts.scale || 1, still: !!opts.still,
+               speed: opts.speed || 1, drift: !!opts.drift, lastPtr: -1e9 };
     function size() {
       var dpr = Math.min(window.devicePixelRatio || 1, opts.maxDpr || 1.5) * st.scale;
       var w = Math.max(2, Math.round(canvas.clientWidth * dpr)), h = Math.max(2, Math.round(canvas.clientHeight * dpr));
@@ -184,9 +185,13 @@
       st.raf = 0;
       if (!st.visible || !st.stone) return;
       size();
+      var el = (now - st.t0) / 1000;
+      if (st.drift && now - st.lastPtr > 2500) {   /* sem mouse: a luz passeia sozinha */
+        st.tx = .5 + .32 * Math.sin(el * .21); st.ty = .55 + .26 * Math.cos(el * .16);
+      }
       var k = 1 - Math.exp(-1 / 14);
       st.lx += (st.tx - st.lx) * k; st.ly += (st.ty - st.ly) * k;
-      draw(ctx, { time: st.still ? 0 : (now - st.t0) / 1000, gloss: st.gloss, finish: st.finish, lx: st.lx, ly: st.ly, zoom: st.zoom, panX: st.panX, panY: st.panY });
+      draw(ctx, { time: st.still ? 0 : el * st.speed, gloss: st.gloss, finish: st.finish, lx: st.lx, ly: st.ly, zoom: st.zoom, panX: st.panX, panY: st.panY });
       if (!st.still || Math.abs(st.tx - st.lx) + Math.abs(st.ty - st.ly) > .002) kick();
     }
     function kick() { if (!st.raf) st.raf = requestAnimationFrame(frame); }
@@ -194,7 +199,7 @@
     window.addEventListener("resize", kick);
     return {
       set: function (stone) { st.stone = stone; apply(ctx, stone.r); kick(); },
-      light: function (x, y) { st.tx = x; st.ty = y; kick(); },
+      light: function (x, y) { st.tx = x; st.ty = y; st.lastPtr = performance.now(); kick(); },
       finish: function (f, g) { st.finish = f; st.gloss = g; kick(); },
       view: function (z, px, py) { st.zoom = z; st.panX = px; st.panY = py; kick(); },
       kick: kick
