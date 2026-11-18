@@ -3,6 +3,9 @@
    Tudo o que é texto da marca, contato e catálogo de pedras mora neste arquivo.
    ========================================================================= */
 
+/* Quem assina o site (aparece na abertura e no rodapé). Preencha url para virar link. */
+window.STUDIO = { name: "Huff Studio", url: "" };
+
 window.BRAND = {
   name: "VEIO",
   tagline: "Atelier de Mármores",

@@ -14,6 +14,11 @@
 
   /* ---------- marca ---------- */
   $$("[data-brand]").forEach(function (el) { var v = B[el.dataset.brand]; if (v != null) el.textContent = v; });
+  var ST = window.STUDIO || {};
+  $$("[data-studio]").forEach(function (el) {
+    if (ST.name) el.textContent = ST.name;
+    if (ST.url && el.closest(".credit")) { var a = document.createElement("a"); a.href = ST.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = el.textContent; el.textContent = ""; el.appendChild(a); }
+  });
 
   /* ---------- cores derivadas ---------- */
   function lum(hex) {
