@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VEIO · Atelier de Mármores</title>
+<meta name="description" content="VEIO, atelier de mármores nobres: catálogo de pedras, tabela de cores, acabamentos e orçamento. Site de demonstração com empresa fictícia.">
+<meta name="theme-color" content="#f4f0e8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300..600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f4f0e8'/%3E%3Cpath d='M8 44 C20 30 30 40 40 22 S56 14 58 10' stroke='%23b08d57' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- abertura: a chapa é polida e se abre -->
+<div id="intro" aria-hidden="true">
+  <div class="intro-in">
+    <div class="intro-logo"><span>V</span><span>E</span><span>I</span><span>O</span></div>
+    <svg class="intro-vein" viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0 22 C80 30 120 6 200 18 S320 34 390 16 S520 8 600 20"/></svg>
+    <div class="intro-sub">Atelier de Mármores</div>
+  </div>
+</div>
+
+<div id="cur"></div><div id="ring"><i></i><b>Ver</b></div>
+<div class="progress"><i></i></div>
+
+<header id="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#inicio" aria-label="VEIO, início">
+      <span class="brand-mark">VEIO</span><span class="brand-sep">/</span><span class="brand-sub">Atelier de Mármores</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#colecao">Coleção</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#cores">Tabela de cores</a>
+      <a href="#acabamentos">Acabamentos</a>
+      <a href="#processo">Processo</a>
+    </nav>
+    <a class="btn btn-ghost mag top-cta" href="#orcamento"><span>Orçamento</span></a>
+    <button class="burger" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+<div class="drawer" aria-hidden="true">
+  <a href="#colecao">Coleção</a><a href="#catalogo">Catálogo</a><a href="#cores">Tabela de cores</a>
+  <a href="#acabamentos">Acabamentos</a><a href="#processo">Processo</a><a href="#orcamento">Orçamento</a>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" data-tone="light">
+  <canvas id="heroGL" aria-hidden="true"></canvas>
+  <div class="hero-fallback" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow hero-eyebrow">Mármores nobres · desde <span data-brand="since">1987</span></p>
+    <h1 class="hero-title">
+      <span class="ln"><span>Esculpido</span></span>
+      <span class="ln"><span>pela <em>natureza.</em></span></span>
+    </h1>
+    <p class="hero-lead">Chapas escolhidas uma a uma nas pedreiras da Itália, Grécia, Espanha e do Brasil. Cortadas e acabadas à mão para projetos que atravessam gerações.</p>
+    <div class="hero-cta">
+      <a class="btn btn-dark mag" href="#catalogo"><span>Explorar o catálogo</span><svg viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5"/></svg></a>
+      <a class="link-line" href="#cores">Ver tabela de cores</a>
+    </div>
+  </div>
+  <div class="hero-foot wrap">
+    <div class="hero-switch" role="group" aria-label="Pedra em exibição">
+      <span class="hs-label">Pedra em exibição</span>
+      <div class="hs-list"></div>
+    </div>
+    <div class="hero-slab">
+      <span>Chapa nº <b id="slabNo">0427</b></span>
+      <span id="slabName">Calacatta Oro</span>
+      <span>2 cm · Polido</span>
+    </div>
+    <a class="scroll-cue" href="#manifesto" aria-label="Rolar para baixo"><span>Role</span><i></i></a>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto" id="manifesto">
+  <svg class="vein-draw" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 120 C 220 160 300 60 520 140 S 820 320 980 260 S 1260 120 1460 220"/>
+    <path class="thin" d="M-20 700 C 180 640 360 760 600 690 S 900 560 1100 640 S 1350 760 1460 700"/>
+  </svg>
+  <div class="wrap man-grid">
+    <p class="eyebrow fade">Nosso manifesto</p>
+    <h2 class="man-text rv">Cada chapa é única. Levou milhões de anos para se formar e merece ser escolhida com o mesmo cuidado.</h2>
+    <div class="man-side fade">
+      <p>Visitamos as pedreiras, acompanhamos o corte dos blocos e selecionamos cada chapa pessoalmente. No nosso pátio, você caminha entre as peças e escolhe exatamente o veio que vai morar na sua casa.</p>
+      <a class="link-line" href="#processo">Como trabalhamos</a>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true"><div class="mq-track"></div></div>
+</section>
+
+<!-- ============ COLEÇÃO (famílias) ============ -->
+<section class="colecao" id="colecao">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow fade">A coleção</p>
+      <h2 class="h2 rv">Três famílias, infinitas leituras.</h2>
+    </div>
+    <div class="fam-grid">
+      <a class="fam fade" href="#catalogo" data-filter="brancos" data-tex="calacatta-oro">
+        <div class="fam-img tex sheen"><span class="fam-n">01</span></div>
+        <h3>Brancos clássicos</h3>
+        <p>Carrara, Statuario, Calacatta. Luz, pureza e veios que desenham o espaço.</p>
+        <span class="link-line">Ver coleção</span>
+      </a>
+      <a class="fam fade" href="#catalogo" data-filter="beges" data-tex="travertino-romano">
+        <div class="fam-img tex sheen"><span class="fam-n">02</span></div>
+        <h3>Travertinos &amp; beges</h3>
+        <p>Textura quente e caráter duradouro. O clássico mediterrâneo, em versão contemporânea.</p>
+        <span class="link-line">Ver coleção</span>
+      </a>
+      <a class="fam fade" href="#catalogo" data-filter="escuros" data-tex="nero-marquina">
+        <div class="fam-img tex sheen"><span class="fam-n">03</span></div>
+        <h3>Escuros &amp; exóticos</h3>
+        <p>Nero Marquina, Imperador, Ônix. Profundidade, contraste e presença absoluta.</p>
+        <span class="link-line">Ver coleção</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKMATCH (fixo na rolagem) ============ -->
+<section class="bm" id="bookmatch">
+  <div class="bm-stick">
+    <div class="wrap bm-grid">
+      <div class="bm-copy">
+        <p class="eyebrow">A arte do bookmatch</p>
+        <h2 class="h2 light">Duas chapas.<br><em>Um só desenho.</em></h2>
+        <p class="bm-p">Chapas vizinhas do mesmo bloco são abertas como as páginas de um livro. O veio se espelha na emenda e forma uma peça impossível de repetir.</p>
+        <ol class="bm-steps">
+          <li class="on"><span>01</span>Chapas consecutivas do mesmo bloco</li>
+          <li><span>02</span>Abertura espelhada, como um livro</li>
+          <li><span>03</span>Emenda invisível, desenho contínuo</li>
+        </ol>
+      </div>
+      <div class="bm-stage">
+        <div class="bm-book">
+          <div class="bm-leaf l"><div class="face tex" data-tex="statuario" data-tex-size="slab"></div></div>
+          <div class="bm-leaf r">
+            <div class="face front tex" data-tex="statuario" data-tex-size="slab"></div>
+            <div class="face back"></div>
+            <div class="shade"></div>
+          </div>
+          <div class="bm-seam"></div>
+        </div>
+        <p class="bm-cap"><span>Statuario · chapas 14 e 15</span><span>3,20 × 1,90 m cada</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATÁLOGO ============ -->
+<section class="catalogo" id="catalogo">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div>
+        <p class="eyebrow fade">Catálogo</p>
+        <h2 class="h2 rv">Tipos de mármore.</h2>
+      </div>
+      <p class="sec-lead fade">Dezessete pedras em estoque permanente. Toque em uma chapa para ver a ficha técnica, mudar o acabamento e mover a luz sobre a superfície.</p>
+    </div>
+    <div class="chips fade" role="tablist" aria-label="Filtrar por família">
+      <button class="chip on" data-f="todos">Todos <sup></sup></button>
+      <button class="chip" data-f="brancos">Brancos <sup></sup></button>
+      <button class="chip" data-f="beges">Beges <sup></sup></button>
+      <button class="chip" data-f="escuros">Escuros <sup></sup></button>
+      <button class="chip" data-f="exoticos">Exóticos <sup></sup></button>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+</section>
+
+<!-- ============ TABELA DE CORES ============ -->
+<section class="cores" id="cores">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div>
+        <p class="eyebrow fade">Tabela de cores</p>
+        <h2 class="h2 rv">A paleta da natureza.</h2>
+      </div>
+      <p class="sec-lead fade">Do branco mais puro ao preto absoluto. Cada pedra traduzida em cores de fundo, veio e acento, prontas para o seu projeto. Clique em uma cor para copiar o código.</p>
+    </div>
+  </div>
+  <div class="spectrum fade" id="spectrum" aria-label="Espectro das pedras, do mais claro ao mais escuro"></div>
+  <div class="wrap">
+    <div class="tbl-tools fade">
+      <div class="chips small" id="tblChips">
+        <button class="chip on" data-f="todos">Todas</button>
+        <button class="chip" data-f="brancos">Brancos</button>
+        <button class="chip" data-f="beges">Beges</button>
+        <button class="chip" data-f="escuros">Escuros</button>
+        <button class="chip" data-f="exoticos">Exóticos</button>
+      </div>
+      <label class="sort">Ordenar
+        <select id="tblSort">
+          <option value="lum">Mais claro → mais escuro</option>
+          <option value="name">Nome (A–Z)</option>
+          <option value="tone">Tom (frio → quente)</option>
+        </select>
+      </label>
+    </div>
+    <div class="tbl-wrap fade">
+      <table class="tbl" id="colorTable">
+        <thead><tr>
+          <th>Pedra</th><th>Família</th><th>Fundo</th><th>Veio</th><th>Acento</th><th>Tom</th><th>Luminosidade</th><th>Origem</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACABAMENTOS ============ -->
+<section class="acab" id="acabamentos">
+  <div class="wrap acab-grid">
+    <div class="acab-copy">
+      <p class="eyebrow fade">Acabamentos</p>
+      <h2 class="h2 rv">A mesma pedra, cinco personalidades.</h2>
+      <div class="acab-tabs" role="tablist">
+        <button class="at on" data-fin="polido"><span>Polido</span><small>Espelhado, cores intensas, veio em evidência.</small></button>
+        <button class="at" data-fin="levigado"><span>Levigado</span><small>Fosco e sedoso ao toque. Discreto e contemporâneo.</small></button>
+        <button class="at" data-fin="escovado"><span>Escovado</span><small>Ondulação suave que lembra a pedra envelhecida.</small></button>
+        <button class="at" data-fin="jateado"><span>Jateado</span><small>Microtextura uniforme e antiderrapante.</small></button>
+        <button class="at" data-fin="apicoado"><span>Apicoado</span><small>Rústico, marcado a ponteiro. Ideal para áreas externas.</small></button>
+      </div>
+    </div>
+    <div class="acab-view fade">
+      <div class="acab-slab tex f-polido" data-tex="calacatta-oro" data-tex-size="big"><div class="acab-light"></div><div class="acab-grain"></div></div>
+      <div class="acab-meta">
+        <div><span>Brilho</span><div class="meter" id="mBrilho"><i></i></div></div>
+        <div><span>Aderência</span><div class="meter" id="mAder"><i></i></div></div>
+        <div><span>Indicado para</span><b id="mUso">Bancadas, painéis, lavabos</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESSO ============ -->
+<section class="processo" id="processo">
+  <div class="wrap proc-grid">
+    <div class="proc-head">
+      <p class="eyebrow fade">Processo</p>
+      <h2 class="h2 rv">Da pedreira à sua casa.</h2>
+      <p class="sec-lead fade">Um único time cuida de tudo: da escolha da chapa à última junta. Sem terceirização, sem surpresas.</p>
+    </div>
+    <ol class="tl" id="tl">
+      <li><span class="tl-n">01</span><div><h3>Escolha da chapa</h3><p>Você visita o nosso pátio, caminha entre as chapas e marca exatamente a peça que deseja.</p></div></li>
+      <li><span class="tl-n">02</span><div><h3>Medição a laser</h3><p>Levantamento digital no local, com gabaritos para bancadas, escadas e painéis.</p></div></li>
+      <li><span class="tl-n">03</span><div><h3>Plano de corte</h3><p>Simulamos o desenho dos veios sobre a chapa antes de cortar, para você aprovar cada emenda.</p></div></li>
+      <li><span class="tl-n">04</span><div><h3>Corte e acabamento</h3><p>Corte em CNC e jato d'água, bordas e acabamentos finalizados à mão por artesãos.</p></div></li>
+      <li><span class="tl-n">05</span><div><h3>Instalação e cuidado</h3><p>Instalação com equipe própria, impermeabilização e um guia de manutenção para toda a vida.</p></div></li>
+    </ol>
+  </div>
+  <div class="wrap stats">
+    <div class="stat fade"><b><span class="odo" data-v="38"></span></b><span>anos de ofício</span></div>
+    <div class="stat fade"><b><span class="odo" data-v="1250"></span></b><span>chapas em estoque</span></div>
+    <div class="stat fade"><b><span class="odo" data-v="4800"></span></b><span>projetos entregues</span></div>
+    <div class="stat fade"><b><span class="odo" data-v="9"></span></b><span>países de origem</span></div>
+  </div>
+</section>
+
+<!-- ============ ESTÚDIO (escuro) ============ -->
+<section class="studio" id="estudio">
+  <div class="studio-tex tex" data-tex="nero-marquina" data-tex-size="big" aria-hidden="true"></div>
+  <div class="wrap studio-in">
+    <p class="eyebrow fade">Nosso ateliê</p>
+    <h2 class="h2 light rv">Feito para durar gerações.</h2>
+    <p class="studio-p fade">Trabalhamos com os materiais mais duradouros da natureza para criar espaços que parecem firmes, humanos e eternos. Cada peça sai do ateliê com a assinatura de quem a fez.</p>
+    <blockquote class="quote fade">
+      <p>“Levo meus clientes ao pátio da VEIO antes de fechar qualquer projeto. Escolher a chapa com eles muda tudo.”</p>
+      <footer>Arquiteta parceira <span>· depoimento ilustrativo</span></footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ ORÇAMENTO ============ -->
+<section class="orc" id="orcamento">
+  <div class="wrap orc-grid">
+    <div class="orc-copy">
+      <p class="eyebrow fade">Orçamento</p>
+      <h2 class="h2 rv">Vamos escolher a sua pedra.</h2>
+      <p class="sec-lead fade">Conte um pouco do projeto. Em até um dia útil, um especialista retorna com sugestões de chapas, acabamentos e prazos.</p>
+      <dl class="contact fade">
+        <div><dt>Showroom</dt><dd data-brand="address"></dd><dd data-brand="city"></dd></div>
+        <div><dt>Horário</dt><dd data-brand="hours"></dd></div>
+        <div><dt>Contato</dt><dd data-brand="phone"></dd><dd data-brand="email"></dd></div>
+      </dl>
+    </div>
+    <form class="form fade" id="qf" novalidate>
+      <div class="field"><input id="f-nome" name="nome" required placeholder=" " autocomplete="name"><label for="f-nome">Seu nome</label></div>
+      <div class="field"><input id="f-tel" name="tel" required placeholder=" " inputmode="tel" autocomplete="tel"><label for="f-tel">Telefone / WhatsApp</label></div>
+      <div class="field"><select id="f-pedra" name="pedra"><option value="">Ainda não sei, quero sugestões</option></select><label for="f-pedra" class="up">Pedra de interesse</label></div>
+      <fieldset class="amb">
+        <legend>Ambientes</legend>
+        <label><input type="checkbox" value="Cozinha"><span>Cozinha</span></label>
+        <label><input type="checkbox" value="Banheiro"><span>Banheiro</span></label>
+        <label><input type="checkbox" value="Escada"><span>Escada</span></label>
+        <label><input type="checkbox" value="Piso"><span>Piso</span></label>
+        <label><input type="checkbox" value="Painel"><span>Painel</span></label>
+        <label><input type="checkbox" value="Mobiliário"><span>Mobiliário</span></label>
+      </fieldset>
+      <div class="field"><textarea id="f-msg" name="msg" rows="3" placeholder=" "></textarea><label for="f-msg">Medidas aproximadas ou detalhes</label></div>
+      <button class="btn btn-dark mag" type="submit"><span>Solicitar orçamento</span><svg viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5"/></svg></button>
+      <p class="qf-out" id="qf-out" role="status"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-word tex" data-tex="calacatta-oro" data-tex-size="word" aria-hidden="true">VEIO</div>
+  <div class="wrap foot-in">
+    <div><span class="brand-mark">VEIO</span><p>Atelier de Mármores<br><span data-brand="city"></span></p></div>
+    <nav><a href="#colecao">Coleção</a><a href="#catalogo">Catálogo</a><a href="#cores">Tabela de cores</a><a href="#acabamentos">Acabamentos</a></nav>
+    <nav><a href="#processo">Processo</a><a href="#estudio">Ateliê</a><a href="#orcamento">Orçamento</a><span data-brand="instagram"></span></nav>
+    <p class="foot-note">Site de demonstração. Empresa, textos, números e contatos são fictícios. Texturas de mármore geradas por código.</p>
+  </div>
+</footer>
+
+<!-- ficha técnica -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mdName" hidden>
+  <div class="md-back" data-close></div>
+  <div class="md-box">
+    <div class="md-slab">
+      <canvas id="mdGL"></canvas>
+      <div class="md-slab-fb tex"></div>
+      <div class="md-fin" role="group" aria-label="Acabamento">
+        <button class="on" data-f="0" data-g="1">Polido</button>
+        <button data-f="1" data-g="1">Levigado</button>
+        <button data-f="2" data-g="1">Escovado</button>
+        <button data-f="3" data-g="1">Jateado</button>
+        <button data-f="4" data-g="1">Apicoado</button>
+      </div>
+      <span class="md-hint">Mova o cursor para mudar a luz</span>
+    </div>
+    <div class="md-info">
+      <button class="md-x" data-close aria-label="Fechar">×</button>
+      <p class="eyebrow" id="mdFam">Brancos</p>
+      <h3 id="mdName">Calacatta Oro</h3>
+      <p class="md-origin" id="mdOrigin"></p>
+      <p class="md-desc" id="mdDesc"></p>
+      <div class="md-sw" id="mdSw"></div>
+      <dl class="md-spec" id="mdSpec"></dl>
+      <div class="md-uses" id="mdUses"></div>
+      <div class="md-act">
+        <a class="btn btn-dark mag" href="#orcamento" data-close id="mdCta"><span>Solicitar amostra</span><svg viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5"/></svg></a>
+        <div class="md-nav"><button id="mdPrev" aria-label="Pedra anterior">←</button><button id="mdNext" aria-label="Próxima pedra">→</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/marble.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
